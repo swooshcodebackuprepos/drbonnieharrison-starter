@@ -1,7 +1,14 @@
 import Link from 'next/link'
+import type { Route } from 'next'
 import { clsx } from 'clsx'
 
-export function CTAButton({ href, children, variant = 'primary' }: { href: string; children: React.ReactNode; variant?: 'primary'|'outline' }) {
+type Props = {
+  href: Route
+  children: React.ReactNode
+  variant?: 'primary' | 'outline'
+}
+
+export function CTAButton({ href, children, variant = 'primary' }: Props) {
   return (
     <Link
       href={href}
